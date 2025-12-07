@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+    font-family: 'Inter', 'Poppins', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+}
+
+@layer components {
+  /* Modern Input Styles */
+  .custom-input .MuiOutlinedInput-root {
+    @apply rounded-xl bg-white border-2 border-gray-200 h-14 transition-all duration-300 ease-in-out;
+    @apply hover:border-primary-300 hover:shadow-soft;
+    @apply focus-within:bg-white focus-within:border-primary-500 focus-within:shadow-glow focus-within:ring-4 focus-within:ring-primary-100;
+  }
+  
+  .custom-input .MuiOutlinedInput-input {
+    @apply py-3.5 px-4 text-sm md:text-base text-gray-700 placeholder:text-gray-400;
+  }
+
+  .custom-input .MuiOutlinedInput-notchedOutline {
+    @apply border-0;
+  }
+
+  /* Modern Button Styles */
+  .custom-btn {
+    @apply rounded-xl bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-500 py-3.5 px-6 text-base font-semibold text-white shadow-medium h-14;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:shadow-glow hover:scale-105 hover:from-primary-700 hover:via-primary-600 hover:to-secondary-600;
+    @apply active:scale-95;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100;
+  }
+
+  .custom-outlined-btn {
+    @apply rounded-xl border-2 border-gray-300 bg-white text-gray-700 py-3.5 px-6 text-base font-semibold h-14;
+    @apply transition-all duration-300 ease-out shadow-soft;
+    @apply hover:border-primary-500 hover:bg-primary-50 hover:text-primary-700 hover:shadow-medium;
+    @apply active:scale-95;
+  }
+
+  /* Card Styles */
+  .modern-card {
+    @apply bg-white rounded-2xl shadow-soft border border-gray-100;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:shadow-medium hover:-translate-y-1;
+  }
+
+  .modern-card-active {
+    @apply bg-white rounded-2xl shadow-medium border-2 border-primary-500;
+    @apply transition-all duration-300 ease-out;
+  }
+
+  /* Product Card */
+  .product-card {
+    @apply bg-white rounded-2xl overflow-hidden shadow-soft border border-gray-100;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:shadow-large hover:-translate-y-2 hover:border-primary-200;
+    @apply cursor-pointer;
+  }
+
+  .product-card-image {
+    @apply relative overflow-hidden bg-gray-100;
+    @apply transition-transform duration-500 ease-out;
+  }
+
+  .product-card:hover .product-card-image {
+    @apply scale-105;
+  }
+
+  /* Badge & Chip Styles */
+  .modern-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+    @apply bg-primary-100 text-primary-700 border border-primary-200;
+  }
+
+  .modern-badge-success {
+    @apply bg-green-100 text-green-700 border border-green-200;
+  }
+
+  .modern-badge-warning {
+    @apply bg-amber-100 text-amber-700 border border-amber-200;
+  }
+
+  .modern-badge-error {
+    @apply bg-red-100 text-red-700 border border-red-200;
+  }
+
+  /* Loading Spinner */
+  .spinner {
+    @apply inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-primary-600 border-r-transparent;
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 via-secondary-500 to-accent-500 bg-clip-text text-transparent;
+  }
+
+  /* Glass Effect */
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20 shadow-large;
+  }
+
+  /* Section Header */
+  .section-header {
+    @apply text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4;
+    @apply bg-gradient-to-r from-gray-900 via-primary-800 to-gray-900 bg-clip-text text-transparent;
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+    @apply hover:-translate-y-1 hover:shadow-medium;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 ease-out;
+    @apply hover:shadow-glow;
+  }
+
+  /* Smooth Animations */
+  .animate-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  /* Custom Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-100 rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-primary-400 rounded-full;
+    @apply hover:bg-primary-500;
+  }
+
+  /* Image Container with Overlay */
+  .image-overlay-container {
+    @apply relative overflow-hidden group;
+  }
+
+  .image-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent;
+    @apply opacity-0 group-hover:opacity-100 transition-opacity duration-300;
+  }
+
+  /* Status Indicators */
+  .status-dot {
+    @apply inline-block w-2 h-2 rounded-full;
+  }
+
+  .status-dot-active {
+    @apply bg-green-500 animate-pulse;
+  }
+
+  .status-dot-inactive {
+    @apply bg-gray-400;
+  }
+}
+
+/* Custom Keyframe Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-5deg);
+  }
+  75% {
+    transform: translateY(-25px) rotate(3deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animation Classes */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.8s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out;
+}
+
+/* Delay Classes */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+.delay-700 {
+  animation-delay: 700ms;
+}
+
+.delay-1000 {
+  animation-delay: 1000ms;
+}
